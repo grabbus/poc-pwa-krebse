@@ -11,3 +11,40 @@ window.onload = () => {
         });
       };
   }
+
+function submit(event)
+{  
+    event.preventDefault()
+    console.log('submitted', event);
+    let data = {
+        name: document.getElementById('name'),
+        crustacean_1: document.getElementById('crustacean_1'),
+        crustacean_2: document.getElementById('crustacean_2'),
+        crustacean_3: document.getElementById('crustacean_3'),
+        crustacean_4: document.getElementById('crustacean_4'),
+        number_fish_traps: document.getElementById('number_fish_traps'),
+        comment: document.getElementById('comment'),
+        user_id: document.getElementById('user_id'),
+        section_id: document.getElementById('section_id'),
+      };
+
+      console.log(data);
+
+}
+
+  async function submitPostData(data) {
+    // Default options are marked with *
+    const response = await fetch('https://backend.michaelgrabinger.com/api/fangs', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
+    });
+    return response.json();
+  }

@@ -8,7 +8,7 @@ if ("serviceWorker" in navigator) {
 }
 
 const container = document.querySelector(".container");
-fetch("http://backend.michaelgrabinger.com/api/fangs").then(function (
+fetch("https://backend.michaelgrabinger.com/api/fangs").then(function (
   response
 ) {
   console.log(response);
@@ -18,7 +18,6 @@ const fangs = [{ name: "Test 1" }, { name: "Test 2" }, { name: "Test 3" }];
 
 const showFangs = () => {
   let output = "";
-  console.log(fangs);
   fangs.forEach(
     ({ name }) =>
       (output += `<div class="card">

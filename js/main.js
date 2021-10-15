@@ -60,7 +60,6 @@ function submit()
                 postRequestObjectStore.add(data);
             }
         }
-      }
 
       console.log(data);
      

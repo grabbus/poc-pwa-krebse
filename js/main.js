@@ -16,7 +16,7 @@ window.onload = () => {
 function checkOnlineStatus()
 {
     if (navigator.onLine) {
-        console('online');
+        console.log('online');
     }
 }
 

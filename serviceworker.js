@@ -1,19 +1,18 @@
-var staticCacheName = "pwa";
+const staticFangportal = "poc-fangportal-v1";
+const assets = ["/", "/index.html", "/css/style.css", "/js/app.js"];
 
-self.addEventListener("install", function (e) {
-  e.waitUntil(
-    caches.open(staticCacheName).then(function (cache) {
-      return cache.addAll(["/"]);
+self.addEventListener("install", (installEvent) => {
+  installEvent.waitUntil(
+    caches.open(staticFangportal).then((cache) => {
+      cache.addAll(assets);
     })
   );
 });
 
-self.addEventListener("fetch", function (event) {
-  console.log(event.request.url);
-
-  event.respondWith(
-    caches.match(event.request).then(function (response) {
-      return response || fetch(event.request);
+self.addEventListener("fetch", (fetchEvent) => {
+  fetchEvent.respondWith(
+    caches.match(fetchEvent.request).then((res) => {
+      return res || fetch(fetchEvent.request);
     })
   );
 });

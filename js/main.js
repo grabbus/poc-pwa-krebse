@@ -27,10 +27,8 @@ window.onload = () => {
 function checkOnlineStatus()
 {
     if (navigator.onLine) {
-        console.log('online');
         return true;
     } else if (navigator.offline) {
-        console.log('online');
         return false;
     }
 }
@@ -52,7 +50,15 @@ function submit()
   
       // if app is offline save the data in the indexedDB
       if(!checkOnlineStatus) {
-        console.log('post is not possibly');
+        request.onupgradeneeded = function (event) {
+            let db = event.target.result;
+
+            let objectStore = db.createObjectStore('post-requests');
+            objectStore.transaction.oncomplete = function(event) {
+                let postRequestObjectStore = db.transaction('post-requests', 'read-write').objectStore('post-requests');
+                postRequestObjectStore.add(data);
+            }
+        }
       }
 
 

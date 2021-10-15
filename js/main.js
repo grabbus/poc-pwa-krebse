@@ -27,8 +27,10 @@ window.onload = () => {
 function checkOnlineStatus()
 {
     if (navigator.onLine) {
+        console.log('online');
         return true;
     } else if (navigator.offline) {
+        console.log('online');
         return false;
     }
 }
@@ -48,8 +50,9 @@ function submit()
       };
       console.log(data);
   
+      // if app is offline save the data in the indexedDB
       if(!checkOnlineStatus) {
-        console.log('offline');
+        console.log('post is not possibly');
       }
 
 

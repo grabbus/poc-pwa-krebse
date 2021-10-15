@@ -9,22 +9,23 @@ window.onload = () => {
           // Registrierung fehlgeschlagen
           console.log('Registrierung fehlgeschlagen mit ' + error);
         });
-        checkOnlineStatus();
+        
       };
   }
 
 function checkOnlineStatus()
 {
     if (navigator.onLine) {
-        console.log('online');
+        return true;
+    } else if (navigator.offline) {
+        return false;
     }
 }
 
 function submit()
 {  
-    console.log('clicked');
     let data = {
-        name: document.getElementById('name'),
+        name: document.getElementById('name').value,
         crustacean_1: document.getElementById('crustacean_1').value,
         crustacean_2: document.getElementById('crustacean_2').value,
         crustacean_3: document.getElementById('crustacean_3').value,
@@ -34,8 +35,14 @@ function submit()
         user_id: document.getElementById('user_id').value,
         section_id: document.getElementById('section_id').value,
       };
-
       console.log(data);
+  
+      if(!checkOnlineStatus) {
+        console.log('offline');
+      }
+
+
+     
 }
 
   async function submitPostData(data) {

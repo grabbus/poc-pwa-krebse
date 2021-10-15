@@ -7,39 +7,6 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="white"/>
-  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-
-  <script>
-      //
-      // Define your database
-      //
-      var db = new Dexie("post_database");
-      db.version(1).stores({
-          fangs: 'name,crustacean_1,crustacean_2,crustacean_3,crustacean_4,number_fish_traps,comment,user_id,section_id'
-      });
-
-      //
-      // Put some data into it
-      //
-      db.fangs.put({name: "Nicolas"}).then (function(){
-          //
-          // Then when data is stored, read from it
-          //
-          return db.fangs.get('Nicolas');
-      }).then(function (fang) {
-          //
-          // Display the result
-          //
-          alert ("Nicolas has shoe size " + fang.name);
-      }).catch(function(error) {
-         //
-         // Finally don't forget to catch any error
-         // that could have happened anywhere in the
-         // code blocks above.
-         //
-         alert ("Ooops: " + error);
-      });
-  </script>
 </head>
 <body class="fullscreen">
   <div class="container">

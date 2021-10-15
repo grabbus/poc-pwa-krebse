@@ -1,0 +1,9 @@
+{
+    "name": "PWA Krebse",
+    "short_name": "Krebse",
+    "lang": "de-DE",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "white"
+  }

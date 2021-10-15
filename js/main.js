@@ -2,7 +2,7 @@ window.onload = () => {
     'use strict';
   
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./serviceworker.js', { scope: '/sw-test/' }).then(function(reg) {
+        navigator.serviceWorker.register('./serviceworker.js').then(function(reg) {
           // Registrierung erfolgreich
           console.log('Registrierung erfolgreich. Scope ist ' + reg.scope);
         }).catch(function(error) {

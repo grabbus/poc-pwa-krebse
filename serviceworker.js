@@ -1,3 +1,5 @@
+importScripts('js/dexie.min.js');
+
 var cacheName = 'pwa-krebse';
 var filesToCache = [
     '/',

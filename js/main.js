@@ -46,10 +46,11 @@ function submit()
         user_id: document.getElementById('user_id').value,
         section_id: document.getElementById('section_id').value,
       };
-      console.log(data);
+      
   
       // if app is offline save the data in the indexedDB
-      if(checkOnlineStatus === false) {
+      if(navigator.offline) 
+      console.log('offline');
         request.onupgradeneeded = function (event) {
             let db = event.target.result;
 
@@ -61,7 +62,7 @@ function submit()
         }
       }
 
-
+      console.log(data);
      
 }
 

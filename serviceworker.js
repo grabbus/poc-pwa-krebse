@@ -46,6 +46,7 @@ self.addEventListener('install', function(e) {
 		);
 	}
 })
+
 self.addEventListener('fetch', async function (event) {
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin')
 		return;

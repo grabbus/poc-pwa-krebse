@@ -9,13 +9,20 @@ window.onload = () => {
           // Registrierung fehlgeschlagen
           console.log('Registrierung fehlgeschlagen mit ' + error);
         });
+        checkOnlineStatus();
       };
   }
 
-function submit(event)
+function checkOnlineStatus()
+{
+    if (navigator.onLine) {
+        console('online');
+    }
+}
+
+function submit()
 {  
-    event.preventDefault()
-    console.log('submitted', event);
+    console.log('clicked');
     let data = {
         name: document.getElementById('name'),
         crustacean_1: document.getElementById('crustacean_1').value,

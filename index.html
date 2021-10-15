@@ -9,12 +9,105 @@
   <meta name="theme-color" content="white"/>
 <body class="fullscreen">
   <div class="container">
-    <ul class="topnav">
-      <li><a class="active" href="#">Dashboard</a></li>
-      <li><a href="form.html">Fang eintragen</a></li>
-      <li><a href="list.html">Fänge anzeigen</a></li>
-    </ul>
     <h1 class="title">Fangportal</h1>
+    <br/>
+    <form
+        method="POST"
+        action="https://backend.michaelgrabinger.com/api/fangs"
+    >
+        <label for="name">
+            Name*
+        </label>
+        <input
+            class=""
+            type="text"
+            id="name"
+            name="name"
+            required
+        >
+        <br/>
+        <label for="crustacean_1">
+            Anzahl Krebs 1
+        </label>
+        <input
+        class=""
+        type="number"
+        id="crustacean_1"
+        name="crustacean_1"
+        >
+        <br/>
+        <label for="crustacean_2">
+            Anzahl Krebs 2
+        </label>
+        <input
+        class=""
+        type="number"
+        id="crustacean_2"
+        name="crustacean_2"
+        >
+        <br/>
+        <label for="crustacean_3">
+            Anzahl Krebs 3
+        </label>
+        <input
+        class=""
+        type="number"
+        id="crustacean_3"
+        name="crustacean_3"
+        >
+        <br/>
+        <label for="crustacean_4">
+            Anzahl Krebs 4
+        </label>
+        <input
+        class=""
+        type="number"
+        id="crustacean_4"
+        name="crustacean_4"
+        >
+        <br/>
+        <label for="number_fish_traps">
+            Anzahl Reusen*
+        </label>
+        <input
+        class=""
+        type="number"
+        id="number_fish_traps"
+        name="number_fish_traps"
+        required
+        >
+        <br/>
+        <label for="comment">
+            Bemerkung
+        </label>
+        <input
+            class=""
+            type="text"
+            id="comment"
+            name="comment"
+        >
+        <input
+        type="hidden"
+        value="1"
+        id="user_id"
+        name="user_id"
+        >
+        <input
+        type="hidden"
+        value="1"
+        id="section_id"
+        name="section_id"
+        >
+        <br/>
+        <input
+            class=""
+            type="submit"
+        >
+        <input
+        class=""
+        type="reset"
+        >
+    </form>
   </div>
   <script src="js/main.js"></script>
 </body>

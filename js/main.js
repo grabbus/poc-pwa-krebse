@@ -49,7 +49,7 @@ function submit()
       console.log(data);
   
       // if app is offline save the data in the indexedDB
-      if(!checkOnlineStatus) {
+      if(checkOnlineStatus === false) {
         request.onupgradeneeded = function (event) {
             let db = event.target.result;
 

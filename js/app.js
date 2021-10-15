@@ -8,7 +8,9 @@ if ("serviceWorker" in navigator) {
 }
 
 const container = document.querySelector(".container");
-fetch("http://116.203.209.24/api/fangs").then(function (response) {
+fetch("http://backend.michaelgrabinger.com/api/fangs").then(function (
+  response
+) {
   console.log(response);
 });
 

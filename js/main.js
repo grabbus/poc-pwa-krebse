@@ -11,6 +11,17 @@ window.onload = () => {
         });
         
       };
+
+      if(checkOnlineStatus) {
+          let db;
+          let request = window.indexedDB.open('fangportal', 1);
+          request.onerror = function(event) {
+            console.error("Database error: " + event.target.errorCode);
+          }
+          request.onsuccess = function(event) {
+              db = event.target.result;
+          }
+      }
   }
 
 function checkOnlineStatus()

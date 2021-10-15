@@ -77,21 +77,3 @@ self.addEventListener('fetch', async function (event) {
 		
 	}
 });
-
-// Activate service worker
-self.addEventListener('activate', (event) => {
-	console.info('Event: Activate');
-	event.waitUntil(
-		self.clients.claim(),
-		caches.keys().then((cacheNames) => {
-			return Promise.all(
-				cacheNames.map((cache) => {
-					if (cache !== CACHE.name + CACHE.version) {
-						//delete all old caches or else new version of service worker won't get installed
-						return caches.delete(cache);
-					}
-				})
-			);
-		})
-	);
-});

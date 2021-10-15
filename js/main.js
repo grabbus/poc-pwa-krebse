@@ -18,18 +18,17 @@ function submit(event)
     console.log('submitted', event);
     let data = {
         name: document.getElementById('name'),
-        crustacean_1: document.getElementById('crustacean_1'),
-        crustacean_2: document.getElementById('crustacean_2'),
-        crustacean_3: document.getElementById('crustacean_3'),
-        crustacean_4: document.getElementById('crustacean_4'),
-        number_fish_traps: document.getElementById('number_fish_traps'),
-        comment: document.getElementById('comment'),
-        user_id: document.getElementById('user_id'),
-        section_id: document.getElementById('section_id'),
+        crustacean_1: document.getElementById('crustacean_1').value,
+        crustacean_2: document.getElementById('crustacean_2').value,
+        crustacean_3: document.getElementById('crustacean_3').value,
+        crustacean_4: document.getElementById('crustacean_4').value,
+        number_fish_traps: document.getElementById('number_fish_traps').value,
+        comment: document.getElementById('comment').value,
+        user_id: document.getElementById('user_id').value,
+        section_id: document.getElementById('section_id').value,
       };
 
       console.log(data);
-
 }
 
   async function submitPostData(data) {

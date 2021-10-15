@@ -12,13 +12,7 @@ fetch("http://116.203.209.24/api/fangs").then(function (response) {
   console.log(response);
 });
 
-const fangs = [
-  {
-    name: "Test 1",
-    name: "Test 2",
-    name: "Test 3",
-  },
-];
+const fangs = [{ name: "Test 1" }, { name: "Test 2" }, { name: "Test 3" }];
 
 const showFangs = () => {
   let output = "";
